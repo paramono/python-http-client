@@ -9,6 +9,7 @@ class HTTPError(Exception):
         self.reason = error.reason
         self.body = error.read()
         self.headers = error.hdrs
+        super(HTTPError, self).__init__(error)
 
     @property
     def to_dict(self):
